@@ -1,0 +1,7 @@
+@use 'general/variables' as v;
+@use 'general/settings'; 
+@use 'general/fonts';
+@use 'general/mixins' as m;
+
+@use 'sections/header';
+@use 'sections/hero';

@@ -1,0 +1,26 @@
+@use './fonts';
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, a, p, img, button, input, form, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: 'Nano Sans Mono', Arial, Helvetica, sans-serif;
+}
+
+p, a {
+    font-family: 'Montserrat', sans-serif;
+}

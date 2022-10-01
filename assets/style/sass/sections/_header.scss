@@ -1,0 +1,35 @@
+@use '../general/variables' as v;
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: v.$black;
+    padding: 0 10px;
+    height: 70px;
+
+    h2 {
+        color: v.$primary;
+        font-size: 24px;
+        font-weight: bold;
+
+        span {color: v.$blue;}
+
+        img {display: none;}
+    }
+
+    .nav-container {
+        align-self: center;
+        nav {display: none;}
+
+        img {
+            margin-top: 7px;
+            width: 30px;
+            height: 30px;
+            filter: v.$filter-red;
+        }
+    }
+}
+
+

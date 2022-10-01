@@ -1,0 +1,57 @@
+@use '../general/variables' as v;
+@use '../general/mixins' as m;
+
+.background-image__yellow {
+    background-color: v.$primary;
+}
+
+.hero-title {
+    padding: 45px 15px;
+
+    h1 {
+        color: v.$blue;
+        font-size: 28px;
+    }
+}
+
+.hero-paragraph {
+    background-color: v.$black;
+    padding: 45px 15px;
+
+    p {
+        color: v.$white;
+    }
+}
+
+.hero-buttons {
+    padding: 25px 15px;
+    
+    .pokedex-btn {
+        @include m.btn-hero(v.$blue);
+
+        a {
+            color: v.$white;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        img {
+            @include m.poke-svg(v.$filter-yellow, 28%, 122px);
+        }
+    }
+
+    .poketeam-btn {
+        @include m.btn-hero(v.$red);
+
+        a {
+            color: v.$white;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        img {
+            @include m.poke-svg(v.$filter-yellow, 28%, 136px);
+        }
+    }
+
+}

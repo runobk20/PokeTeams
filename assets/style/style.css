@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Nano Sans Mono";
+  src: url(/assets/fonts/NotoSansMono-VariableFont_wdth\,wght.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+  font-display: swap;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, a, p, img, button, input, form, body {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: "Nano Sans Mono", Arial, Helvetica, sans-serif;
+}
+
+p, a {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f3135;
+  padding: 0 10px;
+  height: 70px;
+}
+header h2 {
+  color: #ffba00;
+  font-size: 24px;
+  font-weight: bold;
+}
+header h2 span {
+  color: #3e51f5;
+}
+header h2 img {
+  display: none;
+}
+header .nav-container {
+  align-self: center;
+}
+header .nav-container nav {
+  display: none;
+}
+header .nav-container img {
+  margin-top: 7px;
+  width: 30px;
+  height: 30px;
+  filter: invert(18%) sepia(60%) saturate(4893%) hue-rotate(351deg) brightness(96%) contrast(105%);
+}
+
+.background-image__yellow {
+  background-color: #ffba00;
+}
+
+.hero-title {
+  padding: 45px 15px;
+}
+.hero-title h1 {
+  color: #3e51f5;
+  font-size: 28px;
+}
+
+.hero-paragraph {
+  background-color: #2f3135;
+  padding: 45px 15px;
+}
+.hero-paragraph p {
+  color: #f5f5f5;
+}
+
+.hero-buttons {
+  padding: 25px 15px;
+}
+.hero-buttons .pokedex-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 240px;
+  height: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #3e51f5;
+  margin-bottom: 15px;
+}
+.hero-buttons .pokedex-btn a {
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 22px;
+}
+.hero-buttons .pokedex-btn img {
+  width: 25px;
+  height: 25px;
+  filter: invert(64%) sepia(73%) saturate(993%) hue-rotate(1deg) brightness(105%) contrast(104%);
+  position: absolute;
+  top: 28%;
+  left: 122px;
+}
+.hero-buttons .poketeam-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 240px;
+  height: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #ee1515;
+  margin-bottom: 15px;
+}
+.hero-buttons .poketeam-btn a {
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 22px;
+}
+.hero-buttons .poketeam-btn img {
+  width: 25px;
+  height: 25px;
+  filter: invert(64%) sepia(73%) saturate(993%) hue-rotate(1deg) brightness(105%) contrast(104%);
+  position: absolute;
+  top: 28%;
+  left: 136px;
+}
+
+/*# sourceMappingURL=style.css.map */
