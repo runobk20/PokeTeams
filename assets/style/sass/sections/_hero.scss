@@ -10,7 +10,7 @@
 
     h1 {
         color: v.$blue;
-        font-size: 28px;
+        font-size: clamp(28px, 6vw, 44px);
     }
 }
 
@@ -53,5 +53,31 @@
             @include m.poke-svg(v.$filter-yellow, 28%, 136px);
         }
     }
+}
 
+@media screen and (min-width: 576px) {
+    .hero-title {
+        padding: 60px 40px;
+    }
+
+    .hero-paragraph {
+        padding: 60px 40px;
+    }
+
+    .hero-buttons {
+        padding: 40px 40px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .separator {
+        padding-top: 70px;
+    }
+
+    .poke-card__hero {
+        display: none;
+    }
 }

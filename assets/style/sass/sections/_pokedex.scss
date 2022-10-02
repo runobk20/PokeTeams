@@ -1,0 +1,95 @@
+@use '../general/variables' as v;
+
+.pokedex-section {
+    padding: 40px 10px;
+}
+
+.pokedex-header {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+
+    form > input {
+        height: 20px;
+    }
+}
+
+.card {
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid v.$black;
+    box-shadow: 10px 10px 5px v.$black;
+}
+
+// Card content
+
+.poke-presentation {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h2 {
+        margin: 10px auto;
+        font-size: 18px;
+        font-weight: normal;
+        letter-spacing: 2px;
+    }
+
+    .img-background {
+        margin: 20px auto;
+        width: 50%;
+        border-radius: 50%;
+
+        img {
+            padding: 10px;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    p {
+        font-size: 15px;
+        margin: 10px auto;
+    }
+}
+
+.type {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    width: 80%;
+
+    background-color: rgb(245,245,245);
+    padding: 5px;
+    margin: 0 auto 10px;
+}
+
+// stats list 
+
+#stat-list {
+    list-style: none;
+    width: 80%;
+    margin: 20px auto;
+    padding: 0;
+}
+
+#stat-list > li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    border-bottom: 1px solid v.$black;
+}
+
+@media screen and (min-width: 576px) {
+    
+}

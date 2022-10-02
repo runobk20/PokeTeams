@@ -8,14 +8,16 @@
     <title>PokeTeams</title>
     <link rel="icon" type="img/x-icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="./assets/style/style.css">
+    <script src="/assets/scripts/mobileNav.js" defer></script>
+    <script src="/assets/scripts/pokedexApp.js" defer></script>
 </head>
 
 <body>
-    <header>
+    <header class="sticky">
         <h2>Poke<span>Teams</span> <img src="./assets/img/pokeball.svg" alt="pokeball icon"></h2>
         <div class="nav-container">
             <img src="./assets/img/pokeball.svg" alt="pokeball icon">
-            <nav>
+            <nav id="nav">
                 <a href="index.html">Home</a>
                 <a href="#">PokeDex</a>
                 <a href="#">Teams</a>
@@ -23,7 +25,7 @@
         </div>
     </header>
 
-    <div>
+    <div class="separator">
         <div class="background-image__yellow">
             <main class="container">
                 <div class="hero-title">
@@ -49,6 +51,26 @@
             </main>
         </div>
     </div>
+    <div class="pokedex-section">
+        <div class="pokedex-header">
+            <h2>Pokedex</h2>
+            <form action="" onsubmit="searchPokemon(event)">
+                <input type="text" name="pokemon" placeholder="Search a Pokemon!" autocomplete="off">
+            </form>
+        </div>
+        <div class="card">
+            <div data-poke-card class="poke-presentation">
+                <h2 data-poke-name>Pokedex</h2>
+                <div data-poke-img-container class="img-background">
+                    <img data-poke-img src="./assets/img/unknown-pokemon.png" alt="unknown-pokemon">
+                </div>
+                <p data-poke-number></p>
+                <div data-poke-type></div>
+            </div>
+            <ul data-poke-stats id="stat-list"></ul>
+        </div>
+    </div>
+
 </body>
 
 </html>

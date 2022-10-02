@@ -1,0 +1,35 @@
+@use '../general/variables' as v;
+
+header .nav-container nav.mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: v.$black;
+    z-index: 100;
+
+    padding: 20px;
+    border-top: 2px solid v.$white;
+    border-bottom: 2px solid v.$white;
+
+    a {
+        color: v.$white;
+        font-weight: bold;
+    }
+
+    a:active {
+        color: v.$primary;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header.sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+}

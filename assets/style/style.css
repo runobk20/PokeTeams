@@ -33,6 +33,10 @@ p, a {
   font-family: "Montserrat", sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -74,7 +78,7 @@ header .nav-container img {
 }
 .hero-title h1 {
   color: #3e51f5;
-  font-size: 28px;
+  font-size: clamp(28px, 6vw, 44px);
 }
 
 .hero-paragraph {
@@ -97,6 +101,7 @@ header .nav-container img {
   padding: 20px;
   border-radius: 20px;
   background-color: #3e51f5;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 .hero-buttons .pokedex-btn a {
@@ -121,6 +126,7 @@ header .nav-container img {
   padding: 20px;
   border-radius: 20px;
   background-color: #ee1515;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 .hero-buttons .poketeam-btn a {
@@ -135,6 +141,136 @@ header .nav-container img {
   position: absolute;
   top: 28%;
   left: 136px;
+}
+
+@media screen and (min-width: 576px) {
+  .hero-title {
+    padding: 60px 40px;
+  }
+  .hero-paragraph {
+    padding: 60px 40px;
+  }
+  .hero-buttons {
+    padding: 40px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 768px) {
+  .separator {
+    padding-top: 70px;
+  }
+  .poke-card__hero {
+    display: none;
+  }
+}
+header .nav-container nav.mobile-nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2f3135;
+  z-index: 100;
+  padding: 20px;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
+}
+header .nav-container nav.mobile-nav a {
+  color: #f5f5f5;
+  font-weight: bold;
+}
+header .nav-container nav.mobile-nav a:active {
+  color: #ffba00;
+}
+
+@media screen and (max-width: 768px) {
+  header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+}
+.pokedex-section {
+  padding: 40px 10px;
+}
+
+.pokedex-header {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.pokedex-header h2 {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+.pokedex-header form > input {
+  height: 20px;
+}
+
+.card {
+  width: 70%;
+  margin: 0 auto;
+  border: 2px solid #2f3135;
+  box-shadow: 10px 10px 5px #2f3135;
+}
+
+.poke-presentation {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.poke-presentation h2 {
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+.poke-presentation .img-background {
+  margin: 20px auto;
+  width: 50%;
+  border-radius: 50%;
+}
+.poke-presentation .img-background img {
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+}
+.poke-presentation p {
+  font-size: 15px;
+  margin: 10px auto;
+}
+
+.type {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  width: 80%;
+  background-color: rgb(245, 245, 245);
+  padding: 5px;
+  margin: 0 auto 10px;
+}
+
+#stat-list {
+  list-style: none;
+  width: 80%;
+  margin: 20px auto;
+  padding: 0;
+}
+
+#stat-list > li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  border-bottom: 1px solid #2f3135;
 }
 
 /*# sourceMappingURL=style.css.map */
