@@ -1,0 +1,33 @@
+@use '../general/variables' as v;
+
+.team-section {
+    padding: 40px 0 0;
+
+    p {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 25px;
+    }
+}
+
+.team-section__left {
+    background-color: v.$primary;
+    padding: 20px;
+}
+
+.team-section__right {
+    background-color: v.$light-gray;
+    padding: 20px;
+}
+
+.team-section__pokemons {
+    background-color: v.$black;
+    padding: 20px;
+    border-bottom: 1px solid v.$white;
+
+    h3 {
+        font-size: 20px;
+        text-align: center;
+        color: v.$white;
+    }
+}

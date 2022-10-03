@@ -1,0 +1,25 @@
+@use '../general/variables' as v;
+
+footer {
+    background-color: v.$black;
+    padding: 20px;
+
+    p {
+        font-size: 16px;
+        color: v.$white;
+        line-height: 25px;
+
+        span {
+            color: v.$primary;
+            font-weight: bold;
+        }
+
+        a {
+            color: v.$primary;
+        }
+
+        a:visited {
+            color: v.$red;
+        }
+    }
+}
