@@ -5,6 +5,10 @@ const pokeImg = document.querySelector("[data-poke-img]");
 const pokeId = document.querySelector("[data-poke-number]");
 const pokeType = document.querySelector("[data-poke-type]");
 const pokeStats = document.querySelector("[data-poke-stats]");
+const addPokemonBtn = document.getElementById('add-btn-root');
+
+const pokeTeamRoot = document.querySelector('.team-section__root');
+const pokeTeam = [];
 
 const typeColors = {
   normal: "#A8A878",
@@ -54,6 +58,7 @@ function renderPokemon(res) {
   renderTypes(types);
   renderBackground(types);
   renderStats(res.stats);
+  addButton(types);
 }
 
 function renderTypes(typesList) {
@@ -99,11 +104,55 @@ function renderStats(statsList) {
 }
 
 function renderNotFound(res) {
-  console.log(res);
   pokeName.innerText = "Not a Pokemon";
   pokeId.innerText = "";
   pokeImgContainer.style.background = "";
   pokeType.innerText = "";
   pokeImg.setAttribute("src", "./assets/img/unknown-pokemon.png");
   pokeStats.innerHTML = '';
+}
+
+function addButton(typesList) {
+  addPokemonBtn.innerHTML = '';
+  const buttonEl = document.createElement('button');
+  buttonEl.classList.add('add-pokemon__button');
+  buttonEl.textContent = 'Add to Team';
+  for (let i = 0; i < 1; i++) {
+    for (let types of typesList) {
+      if(types['slot'] === 1) {
+        const firstType = types['type']['name'];
+        buttonEl.style.backgroundColor = typeColors[firstType];
+      } else {
+        break;
+      }
+    }
+  }
+
+  buttonEl.addEventListener('click', (e) => {
+    addPokemonHandler(e);
+  })
+
+  addPokemonBtn.append(buttonEl);
+}
+
+class Pokemon {
+  constructor(name) {
+    this.name = name;
+    this.id = Math.random();
+  }
+}
+
+function addPokemonHandler(event) {
+  const cardEl = event.target.parentNode.parentNode;
+  const pokeName = cardEl.children[0].textContent;
+  const pokemonObj = new Pokemon(pokeName);
+
+  if(pokeTeam.length < 6) {
+    pokeTeam.push(pokemonObj);
+    const pokemonNodeClone = cardEl.parentNode.cloneNode(true);
+    const teamMemberContainer = document.createElement('div');
+    teamMemberContainer.style.backgroundColor = '#f5f5f5';
+    teamMemberContainer.append(pokemonNodeClone);
+    pokeTeamRoot.append(teamMemberContainer);
+  }
 }

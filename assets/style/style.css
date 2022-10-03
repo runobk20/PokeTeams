@@ -423,6 +423,14 @@ header .nav-container nav.mobile-nav a:active {
     height: 30px;
   }
 }
+.add-pokemon__button {
+  background-color: #ffba00;
+  border: 1px solid #2f3135;
+  padding: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
 .team-section {
   padding: 40px 0 0;
 }
@@ -443,7 +451,7 @@ header .nav-container nav.mobile-nav a:active {
 }
 
 .team-section__pokemons {
-  background-color: #2f3135;
+  background-color: #f5f5f5;
   padding: 20px;
   border-bottom: 1px solid #f5f5f5;
 }
