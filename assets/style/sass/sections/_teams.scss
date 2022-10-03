@@ -1,13 +1,10 @@
 @use '../general/variables' as v;
 
-.team-section {
-    padding: 40px 0 0;
-
-    p {
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 25px;
-    }
+.team-section__text1, .team-section__text2 {
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
 }
 
 .team-section__left {
@@ -26,8 +23,136 @@
     border-bottom: 1px solid v.$white;
 
     h3 {
-        font-size: 20px;
+        margin: 10px 0;
+        font-size: clamp(20px, 3vw, 24px);
         text-align: center;
-        color: v.$white;
+        color: v.$black;
+    }
+}
+
+.team-section__root {
+    display: grid;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (min-width: 576px) {
+    .team-section__left {
+        display: flex;
+        justify-content: flex-start;
+        padding: 30px;
+
+        .team-section__text1 {
+            display: inline-block;
+            text-align: left;
+            margin-left: 20px;
+            padding: 25px;
+
+            background-color: v.$black;
+            color: v.$white;
+            border-radius: 0 0px 40px 40px;
+        }
+    }
+
+    .team-section__right {
+        display: flex;
+        justify-content: flex-end;
+        padding: 30px;
+
+        background-color: v.$primary;
+        border-top: 2px dashed v.$black;
+
+        .team-section__text2 {
+            display: inline-block;
+            text-align: right;
+            margin-left: 20px;
+            padding: 20px;
+
+            background-color: v.$white;
+            color: v.$black;
+            border-radius: 40px 40px 0 0;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {  
+    .team-section__left {
+
+        .team-section__text1 {
+            padding: 40px;
+            border-radius: 0 40px 40px 40px;
+        }
+    }
+
+    .team-section__right {
+
+        .team-section__text2 {
+            padding: 40px;
+            border-radius: 40px 40px 0 40px;
+        }
+    }
+
+    .team-section__pokemons {
+        h3 {
+            margin: 20px 0;
+        }
+    }
+    
+    .team-section__root {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .team-section__left {
+        .team-section__text1 {
+            font-size: 28px;
+            line-height: 34px;
+        }
+    }
+
+    .team-section__right {
+        border-top: none;
+        .team-section__text2 {
+            font-size: 28px;
+            line-height: 34px;
+        }
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    .team-section__root {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+
+    .team-section-cards__container {
+        background-color: v.$primary;
+    }
+    
+
+    .team-section__left {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .team-section__text1 {
+            font-size: 40px;
+            line-height: 42px;
+            margin-left: 50px;
+            padding: 60px;
+        }
+    }
+
+    .team-section__right {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .team-section__text2 {
+            font-size: 40px;
+            line-height: 42px;
+            margin-right: 50px;
+            padding: 60px;
+        }
     }
 }

@@ -31,6 +31,13 @@ const typeColors = {
   fairy: "#F0B6BC",
 };
 
+class Pokemon {
+  constructor(name) {
+    this.name = name;
+    this.id = Math.random();
+  }
+}
+
 function searchPokemon(event) {
   event.preventDefault();
   const { value } = event.target.pokemon;
@@ -104,6 +111,7 @@ function renderStats(statsList) {
 }
 
 function renderNotFound(res) {
+  addPokemonBtn.innerHTML = '';
   pokeName.innerText = "Not a Pokemon";
   pokeId.innerText = "";
   pokeImgContainer.style.background = "";
@@ -133,13 +141,6 @@ function addButton(typesList) {
   })
 
   addPokemonBtn.append(buttonEl);
-}
-
-class Pokemon {
-  constructor(name) {
-    this.name = name;
-    this.id = Math.random();
-  }
 }
 
 function addPokemonHandler(event) {

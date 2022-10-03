@@ -19,6 +19,7 @@
     padding: 45px 15px;
 
     p {
+        font-size: clamp(16px, 3vw, 24px);
         color: v.$white;
     }
 }
@@ -76,11 +77,6 @@
     }
 }
 
-@media screen and (min-width: 768px) {
-    .hero-buttons {
-        display: block;
-    }
-}
 
 @media screen and (max-width: 768px) {
     .separator {
