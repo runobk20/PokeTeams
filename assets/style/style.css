@@ -37,11 +37,14 @@ img {
   max-width: 100%;
 }
 
+.header-container {
+  background-color: #2f3135;
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2f3135;
   padding: 0 10px;
   height: 70px;
 }
@@ -69,6 +72,43 @@ header .nav-container img {
   filter: invert(18%) sepia(60%) saturate(4893%) hue-rotate(351deg) brightness(96%) contrast(105%);
 }
 
+@media screen and (min-width: 992px) {
+  header {
+    padding: 0 40px;
+  }
+  header h2 {
+    display: flex;
+    align-items: center;
+  }
+  header h2 img {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    filter: invert(18%) sepia(60%) saturate(4893%) hue-rotate(351deg) brightness(96%) contrast(105%);
+  }
+  header .nav-container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .nav-container nav a {
+    color: #f5f5f5;
+    margin-right: 30px;
+  }
+  header .nav-container nav a:hover {
+    color: #ffba00;
+  }
+  header .nav-container img {
+    display: none;
+  }
+}
+@media screen and (min-width: 1260px) {
+  header {
+    width: 1260px;
+    margin: 0 auto;
+  }
+}
 .background-image__yellow {
   background-color: #ffba00;
 }
@@ -143,6 +183,10 @@ header .nav-container img {
   left: 136px;
 }
 
+.poke-card__hero {
+  display: none;
+}
+
 @media screen and (min-width: 576px) {
   .hero-title {
     padding: 60px 40px;
@@ -153,15 +197,84 @@ header .nav-container img {
   .hero-buttons {
     padding: 40px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-buttons {
+    display: block;
   }
 }
 @media screen and (max-width: 768px) {
   .separator {
     padding-top: 70px;
   }
+}
+@media screen and (min-width: 992px) {
+  .background-image__yellow {
+    padding-bottom: 120px;
+  }
+  main.container {
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+  .hero-title {
+    width: 700px;
+  }
+  .hero-title h1 {
+    font-size: 66px;
+  }
+  .hero-info__style {
+    background-color: #f5f5f5;
+    margin-left: 40px;
+    width: 720px;
+    border-radius: 40px 0px 40px 40px;
+  }
+  .hero-paragraph {
+    background-color: initial;
+    padding: 60px 40px 40px;
+  }
+  .hero-paragraph p {
+    color: #2f3135;
+    font-size: 30px;
+  }
+  .hero-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero-buttons .pokedex-btn, .hero-buttons .poketeam-btn {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 1260px) {
+  main {
+    position: relative;
+  }
+  .background-image__yellow {
+    max-width: 1920px;
+    margin: 60px auto;
+    border-radius: 0 700px 0 250px;
+  }
   .poke-card__hero {
-    display: none;
+    display: block;
+    position: absolute;
+    width: 360px;
+    height: 660px;
+    top: 120px;
+    right: 20px;
+  }
+  .poke-card__hero img {
+    width: 360px;
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .background-image__yellow {
+    border-radius: 0 700px 0 500px;
+  }
+  .poke-card__hero {
+    top: 120px;
+    right: -50px;
   }
 }
 header .nav-container nav.mobile-nav {
@@ -187,7 +300,7 @@ header .nav-container nav.mobile-nav a:active {
 }
 
 @media screen and (max-width: 768px) {
-  header.sticky {
+  .header-container.sticky {
     position: fixed;
     top: 0;
     width: 100%;
@@ -214,6 +327,7 @@ header .nav-container nav.mobile-nav a:active {
 
 .card {
   width: 70%;
+  max-width: 450px;
   margin: 0 auto;
   border: 2px solid #2f3135;
   box-shadow: 10px 10px 5px #2f3135;
@@ -230,14 +344,18 @@ header .nav-container nav.mobile-nav a:active {
   letter-spacing: 2px;
 }
 .poke-presentation .img-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px auto;
-  width: 50%;
+  width: clamp(105px, 28vw, 250px);
+  height: clamp(105px, 28vw, 200px);
   border-radius: 50%;
 }
 .poke-presentation .img-background img {
   padding: 10px;
-  width: 100px;
-  height: 100px;
+  width: clamp(100px, 20vw, 150px);
+  height: clamp(100px, 20vw, 150px);
 }
 .poke-presentation p {
   font-size: 15px;
@@ -259,6 +377,7 @@ header .nav-container nav.mobile-nav a:active {
   width: 80%;
   margin: 20px auto;
   padding: 0;
+  padding-bottom: 20px;
 }
 
 #stat-list > li {
@@ -271,6 +390,38 @@ header .nav-container nav.mobile-nav a:active {
   font-weight: 600;
   letter-spacing: 4px;
   border-bottom: 1px solid #2f3135;
+}
+
+@media screen and (min-width: 576px) {
+  .pokedex-header h2 {
+    margin-bottom: 10px;
+  }
+  .poke-presentation h2 {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pokedex-section {
+    padding: 60px 40px;
+  }
+  #stat-list > li {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .pokedex-section {
+    background-color: #2f3135;
+  }
+  .pokedex-item {
+    background-color: #f5f5f5;
+    width: 70%;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .pokedex-header form > input {
+    width: 40%;
+    height: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

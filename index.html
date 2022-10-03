@@ -13,17 +13,19 @@
 </head>
 
 <body>
-    <header class="sticky">
-        <h2>Poke<span>Teams</span> <img src="./assets/img/pokeball.svg" alt="pokeball icon"></h2>
-        <div class="nav-container">
-            <img src="./assets/img/pokeball.svg" alt="pokeball icon">
-            <nav id="nav">
-                <a href="index.html">Home</a>
-                <a href="#">PokeDex</a>
-                <a href="#">Teams</a>
-            </nav>
-        </div>
-    </header>
+    <div class="header-container sticky">
+        <header>
+            <h2>Poke<span>Teams</span> <img src="./assets/img/pokeball.svg" alt="pokeball icon"></h2>
+            <div class="nav-container">
+                <img src="./assets/img/pokeball.svg" alt="pokeball icon">
+                <nav id="nav">
+                    <a href="index.html">Home</a>
+                    <a href="#">PokeDex</a>
+                    <a href="#">Teams</a>
+                </nav>
+            </div>
+        </header>
+    </div>
 
     <div class="separator">
         <div class="background-image__yellow">
@@ -31,45 +33,49 @@
                 <div class="hero-title">
                     <h1>Build the perfect team</h1>
                 </div>
-                <div class="hero-paragraph">
-                    <p>It doesn't matter if you like them strong, strange or cute. Use the Pokedex, search a Pokemon, and add it
-                        to your team.</p>
-                </div>
-                <div class="hero-buttons">
-                    <div class="pokedex-btn">
-                        <a href="#">PokeDex</a>
-                        <img src="./assets/img/pokeball.svg" alt="pokeball icon">
+                <div class="hero-info__style">
+                    <div class="hero-paragraph">
+                        <p>It doesn't matter if you like them strong, strange or cute. Use the Pokedex, search a Pokemon, and add it
+                            to your team.</p>
                     </div>
-                    <div class="poketeam-btn">
-                        <a href="#">PokeTeam</a>
-                        <img src="./assets/img/pokeball.svg" alt="pokeball icon">
+                    <div class="hero-buttons">
+                        <div class="pokedex-btn">
+                            <a href="#">PokeDex</a>
+                            <img src="./assets/img/pokeball.svg" alt="pokeball icon">
+                        </div>
+                        <div class="poketeam-btn">
+                            <a href="#">PokeTeam</a>
+                            <img src="./assets/img/pokeball.svg" alt="pokeball icon">
+                        </div>
                     </div>
                 </div>
                 <div class="poke-card__hero">
-                    <img src="./assets/img/pokecard.png" alt="Pokemon card with description of the pokemon">
+                    <img src="./assets/img/pokecard.jpg" alt="Pokemon card with description of the pokemon">
                 </div>
             </main>
         </div>
     </div>
     <div class="pokedex-section">
-        <div class="pokedex-header">
-            <h2>Pokedex</h2>
-            <form action="" onsubmit="searchPokemon(event)">
-                <input type="text" name="pokemon" placeholder="Search a Pokemon!" autocomplete="off">
-            </form>
-        </div>
-        <div class="card">
-            <div data-poke-card class="poke-presentation">
-                <h2 data-poke-name>Pokedex</h2>
-                <div data-poke-img-container class="img-background">
-                    <img data-poke-img src="./assets/img/unknown-pokemon.png" alt="unknown-pokemon">
-                </div>
-                <p data-poke-number></p>
-                <div data-poke-type></div>
+        <div class="pokedex-item">
+            <div class="pokedex-header">
+                <h2>Pokedex</h2>
+                <form action="" onsubmit="searchPokemon(event)">
+                    <input type="text" name="pokemon" placeholder="Type a name or number" autocomplete="off">
+                </form>
             </div>
-            <ul data-poke-stats id="stat-list"></ul>
+            <div class="card">
+                <div data-poke-card class="poke-presentation">
+                    <h2 data-poke-name>Pokedex</h2>
+                    <div data-poke-img-container class="img-background">
+                        <img data-poke-img src="./assets/img/unknown-pokemon.png" alt="unknown-pokemon">
+                    </div>
+                    <p data-poke-number></p>
+                    <div data-poke-type></div>
+                </div>
+                <ul data-poke-stats id="stat-list"></ul>
+            </div>
         </div>
-    </div>
+        </div>
 
 </body>
 

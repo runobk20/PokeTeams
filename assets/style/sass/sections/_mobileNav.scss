@@ -26,7 +26,7 @@ header .nav-container nav.mobile-nav {
 }
 
 @media screen and (max-width: 768px) {
-    header.sticky {
+    .header-container.sticky {
         position: fixed;
         top: 0;
         width: 100%;

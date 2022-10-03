@@ -22,6 +22,7 @@
 
 .card {
     width: 70%;
+    max-width: 450px;
     margin: 0 auto;
     border: 2px solid v.$black;
     box-shadow: 10px 10px 5px v.$black;
@@ -41,14 +42,18 @@
     }
 
     .img-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 20px auto;
-        width: 50%;
+        width: clamp(105px, 28vw, 250px);
+        height: clamp(105px, 28vw, 200px);
         border-radius: 50%;
 
         img {
             padding: 10px;
-            width: 100px;
-            height: 100px;
+            width: clamp(100px, 20vw, 150px);
+            height: clamp(100px, 20vw, 150px);
         }
     }
 
@@ -76,6 +81,7 @@
     width: 80%;
     margin: 20px auto;
     padding: 0;
+    padding-bottom: 20px;
 }
 
 #stat-list > li {
@@ -91,5 +97,41 @@
 }
 
 @media screen and (min-width: 576px) {
-    
+    .pokedex-header {
+        h2 {margin-bottom: 10px;}
+    }
+
+    .poke-presentation {
+        h2 {font-size: 22px;}
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .pokedex-section {
+        padding: 60px 40px;
+    }
+
+    #stat-list > li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokedex-section {
+        background-color: v.$black;
+    }
+
+    .pokedex-item {
+        background-color: v.$white;
+        width: 70%;
+        margin: 0 auto;
+        padding: 80px 40px;
+    }
+
+    .pokedex-header {
+        form > input {
+            width: 40%;
+            height: 30px;
+        }
+    }
 }

@@ -1,11 +1,14 @@
 @use '../general/variables' as v;
 
+.header-container {
+    background-color: v.$black;
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background-color: v.$black;
     padding: 0 10px;
     height: 70px;
 
@@ -32,4 +35,48 @@ header {
     }
 }
 
+@media screen and (min-width: 992px) {
+    header {
+        padding: 0 40px;
+        h2 {
+            display: flex;
+            align-items: center;
+            img{
+                display: block;
+                width: 25px;
+                height: 25px;
+                margin-top: 5px;
+                filter: v.$filter-red;
+            }
+        }
+
+        .nav-container {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    color: v.$white;
+                    margin-right: 30px;
+                }
+
+                a:hover {
+                    color: v.$primary;
+                }
+            }
+
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    header {
+        width: 1260px;
+        margin: 0 auto;
+    }
+}
 
