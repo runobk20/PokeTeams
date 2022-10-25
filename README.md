@@ -1,8 +1,6 @@
-# PokeTeams
+####This web was created using SASS as a CSS compiler, to work in a more organized way.
 
-This web was created using SASS as a CSS compiler, to work in a more organized way.
-
-The scripts are all vanilla JavaScript.
+####The scripts are all vanilla JavaScript.
 Used for:
   => Conecting the PokeApi to the site, creating a PokeDex that let you create a team.
       => Create a Pokemon card.
