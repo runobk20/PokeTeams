@@ -29,12 +29,27 @@ h1, h2, h3 {
   font-family: "Nano Sans Mono", Arial, Helvetica, sans-serif;
 }
 
-p, a {
+p, a, button {
   font-family: "Montserrat", sans-serif;
 }
 
 img {
   max-width: 100%;
+}
+
+.message {
+  color: black;
+  padding: 5px;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.message.alert {
+  background-color: #ED4245;
+}
+
+.message.success {
+  background-color: #57F287;
 }
 
 .header-container {
@@ -72,6 +87,11 @@ header .nav-container img {
   filter: invert(18%) sepia(60%) saturate(4893%) hue-rotate(351deg) brightness(96%) contrast(105%);
 }
 
+@media screen and (min-width: 576px) {
+  header {
+    padding: 0px 40px;
+  }
+}
 @media screen and (min-width: 992px) {
   header {
     padding: 0 40px;
@@ -134,6 +154,9 @@ header .nav-container img {
   padding: 25px 15px;
 }
 .hero-buttons .pokedex-btn {
+  position: relative;
+}
+.hero-buttons .pokedex-btn button {
   display: flex;
   align-items: center;
   position: relative;
@@ -144,21 +167,24 @@ header .nav-container img {
   background-color: #3e51f5;
   margin-top: 15px;
   margin-bottom: 15px;
-}
-.hero-buttons .pokedex-btn a {
   color: #f5f5f5;
   font-weight: bold;
   font-size: 22px;
+  border: none;
+  cursor: pointer;
 }
 .hero-buttons .pokedex-btn img {
   width: 25px;
   height: 25px;
   filter: invert(64%) sepia(73%) saturate(993%) hue-rotate(1deg) brightness(105%) contrast(104%);
   position: absolute;
-  top: 28%;
+  top: 35%;
   left: 122px;
 }
 .hero-buttons .poketeam-btn {
+  position: relative;
+}
+.hero-buttons .poketeam-btn button {
   display: flex;
   align-items: center;
   position: relative;
@@ -169,18 +195,18 @@ header .nav-container img {
   background-color: #ee1515;
   margin-top: 15px;
   margin-bottom: 15px;
-}
-.hero-buttons .poketeam-btn a {
   color: #f5f5f5;
   font-weight: bold;
   font-size: 22px;
+  border: none;
+  cursor: pointer;
 }
 .hero-buttons .poketeam-btn img {
   width: 25px;
   height: 25px;
   filter: invert(64%) sepia(73%) saturate(993%) hue-rotate(1deg) brightness(105%) contrast(104%);
   position: absolute;
-  top: 28%;
+  top: 35%;
   left: 136px;
 }
 
@@ -201,9 +227,14 @@ header .nav-container img {
     justify-content: space-around;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .separator {
     padding-top: 70px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-buttons .pokedex-btn button, .hero-buttons .poketeam-btn button {
+    width: 300px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -238,9 +269,6 @@ header .nav-container img {
     display: flex;
     justify-content: space-between;
   }
-  .hero-buttons .pokedex-btn, .hero-buttons .poketeam-btn {
-    width: 300px;
-  }
 }
 @media screen and (min-width: 1260px) {
   main {
@@ -254,14 +282,14 @@ header .nav-container img {
   .poke-card__hero {
     display: block;
     position: absolute;
-    width: 360px;
-    height: 660px;
+    width: 394px;
+    height: 560px;
     top: 120px;
     right: 20px;
   }
   .poke-card__hero img {
-    width: 360px;
-    height: 600px;
+    width: 394px;
+    height: 560px;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -556,6 +584,7 @@ header .nav-container nav.mobile-nav a:active {
 footer {
   background-color: #2f3135;
   padding: 20px;
+  text-align: center;
 }
 footer p {
   font-size: 16px;

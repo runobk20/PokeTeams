@@ -5,9 +5,9 @@ const pokeImg = document.querySelector("[data-poke-img]");
 const pokeId = document.querySelector("[data-poke-number]");
 const pokeType = document.querySelector("[data-poke-type]");
 const pokeStats = document.querySelector("[data-poke-stats]");
-const addPokemonBtn = document.getElementById('add-btn-root');
+const addPokemonBtn = document.getElementById("add-btn-root");
 
-const pokeTeamRoot = document.querySelector('.team-section__root');
+const pokeTeamRoot = document.querySelector(".team-section__root");
 const pokeTeam = [];
 
 const typeColors = {
@@ -38,6 +38,27 @@ class Pokemon {
   }
 }
 
+class Message {
+  constructor(text, type) {
+    this.text = text;
+    this.type = type;
+  }
+
+  create() {
+    let colorClass;
+    let text = this.text;
+    if(this.type === 'alert') {
+      colorClass = 'alert';
+    } else if (this.type === 'success') {
+      colorClass = 'success';
+    } else {
+      return;
+    }
+    const messageEl = `<p class="message ${colorClass}">${text}</p>`;
+    return messageEl;
+  }
+}
+
 function searchPokemon(event) {
   event.preventDefault();
   const { value } = event.target.pokemon;
@@ -47,7 +68,9 @@ function searchPokemon(event) {
       else return undefined;
     })
     .then((res) => renderPokemon(res))
-    .catch(() => {return});
+    .catch(() => {
+      return;
+    });
 }
 
 function renderPokemon(res) {
@@ -111,24 +134,24 @@ function renderStats(statsList) {
 }
 
 function renderNotFound(res) {
-  addPokemonBtn.innerHTML = '';
+  addPokemonBtn.innerHTML = "";
   pokeName.innerText = "Not a Pokemon";
   pokeId.innerText = "";
   pokeImgContainer.style.background = "";
   pokeType.innerText = "";
   pokeImg.setAttribute("src", "./assets/img/unknown-pokemon.png");
-  pokeStats.innerHTML = '';
+  pokeStats.innerHTML = "";
 }
 
 function addButton(typesList) {
-  addPokemonBtn.innerHTML = '';
-  const buttonEl = document.createElement('button');
-  buttonEl.classList.add('add-pokemon__button');
-  buttonEl.textContent = 'Add to Team';
+  addPokemonBtn.innerHTML = "";
+  const buttonEl = document.createElement("button");
+  buttonEl.classList.add("add-pokemon__button");
+  buttonEl.textContent = "Add to Team";
   for (let i = 0; i < 1; i++) {
     for (let types of typesList) {
-      if(types['slot'] === 1) {
-        const firstType = types['type']['name'];
+      if (types["slot"] === 1) {
+        const firstType = types["type"]["name"];
         buttonEl.style.backgroundColor = typeColors[firstType];
       } else {
         break;
@@ -136,11 +159,18 @@ function addButton(typesList) {
     }
   }
 
-  buttonEl.addEventListener('click', (e) => {
+  buttonEl.addEventListener("click", (e) => {
     addPokemonHandler(e);
-  })
+  });
 
   addPokemonBtn.append(buttonEl);
+}
+
+function removePokemonHandler(event) {
+  const nodeEl = event.target.closest('.card').parentNode;
+  const pokemonIndex = pokeTeam.findIndex(el => el.id === parseFloat(nodeEl.dataset.id));
+  pokeTeam.splice(pokemonIndex, 1)
+  nodeEl.remove();
 }
 
 function addPokemonHandler(event) {
@@ -148,12 +178,47 @@ function addPokemonHandler(event) {
   const pokeName = cardEl.children[0].textContent;
   const pokemonObj = new Pokemon(pokeName);
 
-  if(pokeTeam.length < 6) {
+  if (pokeTeam.length < 6) {
     pokeTeam.push(pokemonObj);
     const pokemonNodeClone = cardEl.parentNode.cloneNode(true);
-    const teamMemberContainer = document.createElement('div');
-    teamMemberContainer.style.backgroundColor = '#f5f5f5';
+    const cloneBtn = pokemonNodeClone.querySelector("#add-btn-root > button");
+    cloneBtn.textContent = "Remove from team";
+    cloneBtn.style.backgroundColor = "#ee1515";
+    cloneBtn.addEventListener('click', event => {
+      removePokemonHandler(event)
+    });
+    
+    const teamMemberContainer = document.createElement("div");
+    teamMemberContainer.dataset.id = pokemonObj.id;
+    teamMemberContainer.style.backgroundColor = "#f5f5f5";
     teamMemberContainer.append(pokemonNodeClone);
     pokeTeamRoot.append(teamMemberContainer);
+
+    if (cardEl.querySelector('.message')) {
+      return;
+    } else {
+      const successMessage = new Message('Pokemon added to team!', 'success').create();
+      cardEl.insertAdjacentHTML('beforeend', successMessage);
+      const message = cardEl.querySelector('.message');
+      deleteMessage(message);
+    }
+  }
+
+  if(pokeTeam.length >= 6) {
+    if(cardEl.querySelector('.message')) {
+      return;
+    }
+    const alertMessage = new Message('Team max size: 6. Delete to add more!', 'alert').create();
+    cardEl.insertAdjacentHTML('beforeend', alertMessage);
+    const message = cardEl.querySelector('.message');
+    deleteMessage(message);
+    return;
   }
 }
+
+function deleteMessage(element) {
+  setTimeout(() => {
+    element.remove();
+  }, 2000);
+}
+

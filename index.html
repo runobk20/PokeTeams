@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/style/style.css">
     <script src="/assets/scripts/mobileNav.js" defer></script>
     <script src="/assets/scripts/pokedexApp.js" defer></script>
+    <script src="/assets/scripts/buttonEvents.js" defer></script>
 </head>
 
 <body>
@@ -19,9 +20,9 @@
             <div class="nav-container">
                 <img src="./assets/img/pokeball.svg" alt="pokeball icon">
                 <nav id="nav">
-                    <a href="index.html">Home</a>
-                    <a href="#">PokeDex</a>
-                    <a href="#">Teams</a>
+                    <a id="home-link" href="">Home</a>
+                    <a id="pokedex-link" href="">PokeDex</a>
+                    <a id="poketeam-link" href="">Teams</a>
                 </nav>
             </div>
         </header>
@@ -40,11 +41,11 @@
                     </div>
                     <div class="hero-buttons">
                         <div class="pokedex-btn">
-                            <a href="#">PokeDex</a>
+                            <button id="pokedex-btn">PokeDex</button>
                             <img src="./assets/img/pokeball.svg" alt="pokeball icon">
                         </div>
                         <div class="poketeam-btn">
-                            <a href="#">PokeTeam</a>
+                            <button id="poketeam-btn">PokeTeam</button>
                             <img src="./assets/img/pokeball.svg" alt="pokeball icon">
                         </div>
                     </div>

@@ -21,8 +21,23 @@ h1, h2, h3 {
     font-family: 'Nano Sans Mono', Arial, Helvetica, sans-serif;
 }
 
-p, a {
+p, a , button{
     font-family: 'Montserrat', sans-serif;
 }
 
 img {max-width: 100%;}
+
+.message {
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.message.alert {
+    background-color: #ED4245;
+}
+
+.message.success {
+    background-color: #57F287;
+}

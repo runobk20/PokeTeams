@@ -35,6 +35,12 @@ header {
     }
 }
 
+@media screen and (min-width: 576px) {
+    header {
+        padding: 0px 40px;
+    }
+}
+
 @media screen and (min-width: 992px) {
     header {
         padding: 0 40px;
