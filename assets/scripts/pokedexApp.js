@@ -178,6 +178,10 @@ function addPokemonHandler(event) {
   const pokeName = cardEl.children[0].textContent;
   const pokemonObj = new Pokemon(pokeName);
 
+  if (cardEl.querySelector('.message')) {
+    return;
+  }
+
   if (pokeTeam.length < 6) {
     pokeTeam.push(pokemonObj);
     const pokemonNodeClone = cardEl.parentNode.cloneNode(true);
